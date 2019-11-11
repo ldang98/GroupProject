@@ -2,7 +2,7 @@
 COSC 4351 Software Engineering
 
 **#Virtual Environment(Optional, I just want to try this out during development)**  
-To create, cd into the project folder and run the following command:  
+To create, cd OUTSIDE project folder(Next to portal directory) and run the following command:  
 
 ```python3 -m venv ENV```  
 
