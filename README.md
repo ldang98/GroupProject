@@ -25,3 +25,13 @@ This will install everything in the requirements.txt file
 **#Run the project**  
 CD into your project folder and run:  
 ```python manage.py runserver```  
+**#Test the database**  
+Run command:  
+```python manage.py shell```  
+Inside the shell run:  
+```>>>from portal.models import Category, Link```  
+```>>>Category.objects.all()```    
+If it doesnt work then exit the shell with CTRL+Z then run:  
+```python manage.py migrate```  
+Now try the shell commands again. If it still doesnt work, then we have problems.  
+
