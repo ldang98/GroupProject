@@ -16,7 +16,7 @@ On MAC:
 run command:  
 ```pip install -r```  
 This will install everything in the requirements.txt file  
-**If you install anything new for the project i.e Bootstrap 4.0, please run the following command:**  
+**If you install anything new for the project with pip, please run the following command:**  
 ```pip freeze```  
 **copy and paste into requirements.txt and tell the team**  
 
