@@ -30,6 +30,16 @@
 			<div class="wrap-login100 small">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="{% static 'home_page/images/img-01.png' %}" alt="IMG">
+
+					<div class="text-center p-t-12">
+						<span class="focus-input100"></span>
+						<span class="focus-input100"></span>
+						<span class="txt2">
+							{% for message in messages %}
+							{{message}}
+							{% endfor %}
+						</span>
+				</div>
 				</div>
 
 				<form class="login100-form validate-form" action="sign_up" method="POST">
@@ -92,6 +102,11 @@
 
 
 				</form>
+
+
+
+
+
 			</div>
 		</div>
 	</div>
