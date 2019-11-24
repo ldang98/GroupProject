@@ -12,27 +12,30 @@ def sign_up(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
-        if password1 == password2:
-            if User.objects.filter(username=username).exists():
-                messages.info(request, '\nERROR: Username already exists\n')
-                # return redirect('sign_up')
-            if User.objects.filter(email=email).exists():
-                messages.info(request, '\nERROR: Email already taken\n')
-                # return redirect('sign_up')
-            else:
-                user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name,
-                                                last_name=last_name)
-                user.save()
-                messages.info(request, '\nUser created successfully\n')
-
-            # return redirect('sign_up')
-
+        if first_name == '':
+            messages.info(request, '**ERROR: First Name is required')
+        if last_name == '':
+            messages.info(request, '**ERROR: Last Name is required')
+        if User.objects.filter(username=username).exists():
+            messages.info(request, '**ERROR: Username already exists')
+        if username == '':
+            messages.info(request, '**ERROR: Username is required')
+        if User.objects.filter(email=email).exists():
+            messages.info(request, '**ERROR: Email already taken')
+        if email == '':
+            messages.info(request, '**ERROR: Email address is required')
         if password1 != password2:
-            messages.info(request, '\nERROR: password not matching\n')
-            # return redirect('sign_up')
+            messages.info(request, '**ERROR: Password not matching')
+        if password1 == '':
+            messages.info(request, '**ERROR: Password is required')
+        if password1 == password2 and (not User.objects.filter(username=username).exists()) \
+                and (not User.objects.filter(email=email).exists()) and (password1 != ''):
+            user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name,
+                                                last_name=last_name)
+            user.save()
+            messages.info(request, 'Congratulation! Your account was created successfully.')
 
         return redirect('sign_up')
-        # return redirect('/')
 
     else:
         return render(request, 'sign_up.html')
