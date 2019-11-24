@@ -29,11 +29,12 @@ def sign_up(request):
         if password1 == '':
             messages.info(request, '**ERROR: Password is required')
         if password1 == password2 and (not User.objects.filter(username=username).exists()) \
-                and (not User.objects.filter(email=email).exists()) and (password1 != ''):
+                and (not User.objects.filter(email=email).exists()) and (password1 != '') and (first_name != '')\
+                and (last_name != '') and (username != '') and (email != ''):
             user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name,
                                                 last_name=last_name)
             user.save()
-            messages.info(request, 'Congratulation! Your account was created successfully.')
+            messages.success(request, 'Congratulation! Your account was created successfully.', extra_tags='SUCCESS')
 
         return redirect('sign_up')
 
