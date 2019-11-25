@@ -35,6 +35,7 @@ def sign_up(request):
                                                 last_name=last_name)
             user.save()
             messages.success(request, 'Congratulation! Your account was created successfully.', extra_tags='SUCCESS')
+            return render(request, 'sign_up_success.html')
 
         return redirect('sign_up')
 
