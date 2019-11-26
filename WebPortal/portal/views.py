@@ -1,6 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
 
 from django.http import HttpResponse
+
+
+def login(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = auth.authenticate(email=email, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'account.html')
+        else:
+            messages.info(request, 'Invalid Credentials.')
+            return redirect('/')
+
+    else:
+        return render(request, 'home.html')
+
 
 def home(request):
     return render(request, 'home.html')
