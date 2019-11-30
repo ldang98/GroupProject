@@ -17,7 +17,7 @@
     <link href="{% static 'admin_page/assets/libs/chartist/dist/chartist.min.css' %}" rel="stylesheet">
     <link href="{% static 'admin_page/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="{% static 'admin_page/dist/css/style.min.css' %}" rel="stylesheet">
+    <link href="{% static 'admin_page/dist/css/style.css' %}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -135,33 +135,33 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="{% static 'admin_page/assets/images/users/profile-pic.jpg' %}" alt="user" class="rounded-circle"
+                                <img src="{% static 'admin_page/assets/images/users/profile_pic.png' %}" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
                                         class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
-                                        class="svg-icon mr-2 ml-1"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"
-                                        class="svg-icon mr-2 ml-1"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="mail"
-                                        class="svg-icon mr-2 ml-1"></i>
-                                    Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
-                                        class="svg-icon mr-2 ml-1"></i>
-                                    Account Setting</a>
-                                <div class="dropdown-divider"></div>
+<!--                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"-->
+<!--                                        class="svg-icon mr-2 ml-1"></i>-->
+<!--                                    My Profile</a>-->
+<!--                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"-->
+<!--                                        class="svg-icon mr-2 ml-1"></i>-->
+<!--                                    My Balance</a>-->
+<!--                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="mail"-->
+<!--                                        class="svg-icon mr-2 ml-1"></i>-->
+<!--                                    Inbox</a>-->
+<!--                                <div class="dropdown-divider"></div>-->
+<!--                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"-->
+<!--                                        class="svg-icon mr-2 ml-1"></i>-->
+<!--                                    Account Setting</a>-->
+<!--                                <div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
-                                        Profile</a></div>
+<!--                                <div class="dropdown-divider"></div>-->
+<!--                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View-->
+<!--                                        Profile</a></div>-->
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -183,11 +183,11 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                        <li class="sidebar-item selected"> <a class="sidebar-link sidebar-link" href="index.html"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
 
-                        
+
 
 
 
@@ -219,11 +219,15 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>
+<!--                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>-->
+                        <div class="login100-form-title" >Good Morning, Jason!</div>
+<!--                        <span class="login100-form-title">-->
+<!--						Good Morning, Jason!-->
+<!--					    </span>-->
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                                    <li class="breadcrumb-item"><a href="index.html">Choose your application to start: </a>
                                     </li>
                                 </ol>
                             </nav>
@@ -260,7 +264,7 @@
                                     </div>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +278,7 @@
                                     </div>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -302,7 +306,7 @@
                                     </div>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
                                 </div>
                             </div>
                         </div>
