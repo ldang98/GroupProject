@@ -7,12 +7,12 @@ from django.contrib.auth.models import Group
 #     def __str__(self):
 #         return self.name
 
-class Links(models.Model):
-    title=models.CharField(max_length=100)
-    url=models.URLField()
-    links=models.ManyToManyField(Group)
-
-    def __str__(self):
-        return self.title
+# class Links(models.Model):
+#     title=models.CharField(max_length=100)
+#     url=models.URLField()
+#     links=models.ManyToManyField(Group)
+#
+#     def __str__(self):
+#         return self.title
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import  Links
+# from .models import  Links
 
 # Register your models here.
 #admin.site.register(Category)
-admin.site.register(Links)
+# admin.site.register(Links)
