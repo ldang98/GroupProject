@@ -9,3 +9,6 @@ def logout(request):
 
 # def account(request):
 #     return render(request, 'account.html')
+
+
+	
