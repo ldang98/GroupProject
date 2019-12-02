@@ -149,3 +149,6 @@ class TestViews(TestCase):
         self.assertEqual(len(messages), 2)
         self.assertEqual(str(messages[0]), '**ERROR: Password not matching')
         self.assertEqual(str(messages[1]), '**ERROR: Password is required')
+
+
+

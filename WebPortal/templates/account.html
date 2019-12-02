@@ -102,7 +102,7 @@
                                 <div class="customize-input">
                                     <select
                                         class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option>Finance Admin</option>
+                                        <option>{{Role}} Admin</option>
 <!--                                        <option value="1">AB</option>-->
 <!--                                        <option value="2">AK</option>-->
 <!--                                        <option value="3">BE</option>-->
@@ -138,7 +138,7 @@
                                 <img src="{% static 'admin_page/assets/images/users/profile_pic.png' %}" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
+                                        class="text-dark">{{user}}</span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -220,7 +220,7 @@
                 <div class="row">
                     <div class="col-7 align-self-center">
 <!--                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>-->
-                        <div class="login100-form-title" >Good Morning, Jason!</div>
+                        <div class="login100-form-title" >Good Morning,  {{ user}}!</div>
 <!--                        <span class="login100-form-title">-->
 <!--						Good Morning, Jason!-->
 <!--					    </span>-->
@@ -255,12 +255,13 @@
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
                 <div class="card-group">
+                    {% for link in links %}
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Finance Reports</h4>
+                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>
                                     </div>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
@@ -269,48 +270,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                             <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Accounts Payable</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                           <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Accounts Receivables</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                           <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tax</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %} </div>
+<!--
                 </div>
             </div>
             <!-- ============================================================== -->
