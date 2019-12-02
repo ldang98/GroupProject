@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
 
+
 def sign_up(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
