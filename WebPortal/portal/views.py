@@ -18,14 +18,17 @@ def login(request):
             auth.login(request, user) #have code here that decides which page to go to based on group 
             if user.groups.filter(name='Global').exists():
                 return render(request, 'Global.html')
-            if user.groups.filter(name='Finance').exists():
+            elif user.groups.filter(name='Finance').exists():
                 return render(request, 'account.html')
-            if user.groups.filter(name='Sales').exists():
+            elif user.groups.filter(name='Sales').exists():
                 return render(request, 'SalesTemplate.html')
-            if user.groups.filter(name='HR').exists():
+            elif user.groups.filter(name='HR').exists():
                 return render(request, 'HRTemplate.html')
-            if user.groups.filter(name='Engineering').exists():
+            elif user.groups.filter(name='Engineering').exists():
                 return render(request, 'EngineeringTemplate.html')
+            else:
+                messages.info(request, 'Admin Role not assigned yet, but account is created')
+                return redirect('/')
         else:
             messages.info(request, 'Invalid Credentials.')
             return redirect('/')

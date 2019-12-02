@@ -7,6 +7,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "portal/views.py",
+			"settings":
+			{
+				"buffer_size": 1401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/SalesTemplate.html",
+			"settings":
+			{
+				"buffer_size": 21493,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/HRTemplate.html",
+			"settings":
+			{
+				"buffer_size": 23924,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/Global.html",
+			"settings":
+			{
+				"buffer_size": 21501,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -40,10 +75,24 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Son/Desktop/GroupProject/WebPortal"
+		"/Users/Son/Desktop/GroupProject/WebPortal",
+		"/Users/Son/Desktop/GroupProject/WebPortal/portal",
+		"/Users/Son/Desktop/GroupProject/WebPortal/portal/__pycache__",
+		"/Users/Son/Desktop/GroupProject/WebPortal/portal/migrations",
+		"/Users/Son/Desktop/GroupProject/WebPortal/sign_up",
+		"/Users/Son/Desktop/GroupProject/WebPortal/templates",
+		"/Users/Son/Desktop/GroupProject/WebPortal/users"
 	],
 	"file_history":
 	[
+		"/Users/Son/Desktop/GroupProject/WebPortal/templates/EngineeringTemplate.html",
+		"/Users/Son/Desktop/GroupProject/WebPortal/portal/urls.py",
+		"/Users/Son/Desktop/GroupProject/WebPortal/templates/HRTemplate.html",
+		"/Users/Son/Desktop/GroupProject/WebPortal/templates/Global.html",
+		"/Users/Son/Desktop/GroupProject/WebPortal/users/views.py",
+		"/Users/Son/Desktop/GroupProject/WebPortal/templates/SalesTemplate.html",
+		"/Users/Son/Desktop/GroupProject/WebPortal/users/urls.py",
+		"/Users/Son/Desktop/GroupProject/WebPortal/portal/views.py",
 		"/Users/Son/Dev/trydjango/trydjango/products/models.py",
 		"/Users/Son/Dev/firstDjangoApp/mysite/mysite/settings.py",
 		"/Users/Son/Dev/firstDjangoApp/mysite/polls/models.py",
@@ -91,8 +140,129 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "portal/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1111,
+								1111
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/SalesTemplate.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18435,
+								18435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4751.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/HRTemplate.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20470,
+								20470
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5465.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/Global.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18443,
+								18443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4547.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -173,7 +343,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
