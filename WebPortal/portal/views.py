@@ -30,7 +30,7 @@ def login(request):
             messages.info(request, 'Invalid Credentials.')
             return redirect('/')
     else:
-        return render(request, 'account.html')
+        return render(request, 'home.html')
 
 
 def home(request):
