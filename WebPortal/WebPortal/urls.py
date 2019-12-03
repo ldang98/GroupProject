@@ -22,4 +22,5 @@ urlpatterns = [
     path('sign_up', include('sign_up.urls')),
     path('logout', include('users.urls')),
     # path('account', include('users.urls')),
+    path('account', include('portal.urls')),
 ]
