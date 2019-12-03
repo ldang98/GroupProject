@@ -254,19 +254,19 @@
                 <!-- *************************************************************** -->
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
-                <div class="card-group">
+                <div class="card-group row">
                     {% for link in links %}
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                    <div class="col-sm-3 mb-3">
+                        <div class="card-body border-right"  style="background-color: white">
+                            <div class="d-flex d-lg-flex w-30 d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>
                                     </div>
                                 </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
+<!--                                <div class="ml-auto mt-md-3 mt-lg-0">-->
+<!--                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
