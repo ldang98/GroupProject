@@ -100,13 +100,19 @@
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <div class="customize-input">
-                                    <select
-                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option>{{Role}} Admin</option>
-<!--                                        <option value="1">AB</option>-->
-<!--                                        <option value="2">AK</option>-->
-<!--                                        <option value="3">BE</option>-->
-                                    </select>
+<!--                                    <select-->
+<!--                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">-->
+<!--                                        <option>{{Role}} Admin</option>-->
+<!--&lt;!&ndash;                                        <option value="1">AB</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <option value="2">AK</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <option value="3">BE</option>&ndash;&gt;-->
+<!--                                    </select>-->
+
+                                    <div class="form-control custom-shadow custom-radius border-0 bg-white">
+                                            {{Role}} Admin
+<!--                                        <i class="form-control-icon" data-feather="search"></i>-->
+                                    </div>
+
                                 </div>
                             </a>
                         </li>
@@ -261,7 +267,9 @@
                             <div class="d-flex d-lg-flex w-30 d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>
+<!--                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>-->
+                                        <h4> <a href="{{link.url}}" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
+
                                     </div>
                                 </div>
 <!--                                <div class="ml-auto mt-md-3 mt-lg-0">-->
