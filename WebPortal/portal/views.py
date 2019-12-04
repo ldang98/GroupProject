@@ -35,6 +35,9 @@ def login(request):
 
             # return render(request, 'account.html', {'links': links}, {'category': category})
             # return render(request, 'account.html', {'links': links})
+            else:
+                messages.info(request, 'Can\'t login without an assigned role!')
+                return redirect('/')
         else:
             messages.info(request, 'Invalid Credentials.')
             return redirect('/')
