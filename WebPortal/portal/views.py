@@ -5,6 +5,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth.models import Group, Permission
 from .models import Link
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -49,6 +50,7 @@ def login(request):
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url='/')
 def accountPage(request):
     user=request.user
     globalUrls = Link.objects.filter(links__name='Global')  # returns queryset using foreign key to where group is Global

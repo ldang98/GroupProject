@@ -136,3 +136,6 @@ NOSE_ARGS = [
     '--cover-inclusive'
     # '--cover-package = portal, sign_up, users',
 ]
+
+
+#LOGOUT_REDIRECT_URL='login'

@@ -22,5 +22,8 @@ urlpatterns = [
     path('sign_up', include('sign_up.urls')),
     path('logout', include('users.urls')),
     # path('account', include('users.urls')),
-    path('account', include('portal.urls')),
+    #path('account', include('portal.urls')),
 ]
+
+admin.site.site_header = 'Portal Administration'
+admin.site.site_title = 'Portal Administration'
