@@ -4,11 +4,10 @@ from django.contrib.auth.models import User, auth
 # Create your views here.
 def logout(request):
     auth.logout(request)
-    return render(request, 'home.html')
+    # return render(request, 'home.html')
+    return redirect("/")
 
 
 # def account(request):
 #     return render(request, 'account.html')
 
-
-	

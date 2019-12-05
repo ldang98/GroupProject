@@ -37,8 +37,7 @@ class TestViews(TestCase):
 
     def test_logout_GET(self):
         response = self.client.get(self.logout_url)
-        self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'home.html')
+        self.assertEquals(response.status_code, 302)
 
 
     def test_sign_up_POST_create_new_account(self):
@@ -149,3 +148,25 @@ class TestViews(TestCase):
         self.assertEqual(len(messages), 2)
         self.assertEqual(str(messages[0]), '**ERROR: Password not matching')
         self.assertEqual(str(messages[1]), '**ERROR: Password is required')
+
+
+    def test_sign_up_POST_no_info(self):
+        response = self.client.post(self.sign_up_url, data={
+            'first_name': '',
+            'last_name' : '',
+            'username' : '',
+            'email' : '',
+            'password1' : '',
+            'password2' : ''
+        })
+        self.assertEquals(response.status_code, 302)
+        self.assertEquals(User.objects.count(), 0)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(len(messages), 5)
+        self.assertEqual(str(messages[0]), '**ERROR: First Name is required')
+        self.assertEqual(str(messages[1]), '**ERROR: Last Name is required')
+        self.assertEqual(str(messages[2]), '**ERROR: Username is required')
+        self.assertEqual(str(messages[3]), '**ERROR: Email address is required')
+        self.assertEqual(str(messages[4]), '**ERROR: Password is required')
+
+

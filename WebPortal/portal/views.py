@@ -1,9 +1,11 @@
+from itertools import chain
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.models import Group, Permission
-
+from .models import Link
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 # Son's Code
@@ -15,19 +17,28 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request, user) #have code here that decides which page to go to based on group 
-            if user.groups.filter(name='Global').exists():
-                return render(request, 'Global.html')
-            elif user.groups.filter(name='Finance').exists():
-                return render(request, 'account.html')
-            elif user.groups.filter(name='Sales').exists():
-                return render(request, 'SalesTemplate.html')
-            elif user.groups.filter(name='HR').exists():
-                return render(request, 'HRTemplate.html')
-            elif user.groups.filter(name='Engineering').exists():
-                return render(request, 'EngineeringTemplate.html')
+            auth.login(request, user)
+            if user.groups.exists():
+                    return redirect('account page')
+            # globalUrls = Link.objects.filter(links__name='Global')  # returns queryset using foreign key to where group is Global
+            # userGroup = user.groups.all()[0]  # object
+
+            # if (userGroup.name != "Global"):
+            #     userUrls = Link.objects.filter(links__name=userGroup.name)  # queryset
+            #     links = list(chain(globalUrls, userUrls))  # concat querysets
+            #     context = {'links': links, 'Role': userGroup.name}
+            # else:
+            #     context = {'links': globals}
+            # return render(request, 'account.html', context)
+
+            # links = Link.objects.all()
+            # category = user.get_group_permissions()
+            # category = Group.
+
+            # return render(request, 'account.html', {'links': links}, {'category': category})
+            # return render(request, 'account.html', {'links': links})
             else:
-                messages.info(request, 'Admin Role not assigned yet, but account is created')
+                messages.info(request, 'Can\'t login without an assigned role!')
                 return redirect('/')
         else:
             messages.info(request, 'Invalid Credentials.')
@@ -39,3 +50,16 @@ def login(request):
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url='/')
+def accountPage(request):
+    user=request.user
+    globalUrls = Link.objects.filter(links__name='Global')  # returns queryset using foreign key to where group is Global
+    userGroup = user.groups.all()[0]  # object
+
+    if (userGroup.name != "Global"):
+        userUrls = Link.objects.filter(links__name=userGroup.name)  # queryset
+        links = list(chain(globalUrls, userUrls))  # concat querysets
+        context = {'links': links, 'Role': userGroup.name}
+    else:
+        context = {'links': globalUrls,'Role':userGroup.name}
+    return render(request, 'account.html', context)

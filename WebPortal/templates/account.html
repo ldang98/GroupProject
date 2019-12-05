@@ -3,6 +3,8 @@
 <html dir="ltr" lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -100,13 +102,19 @@
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <div class="customize-input">
-                                    <select
-                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option>Finance Admin</option>
-<!--                                        <option value="1">AB</option>-->
-<!--                                        <option value="2">AK</option>-->
-<!--                                        <option value="3">BE</option>-->
-                                    </select>
+<!--                                    <select-->
+<!--                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">-->
+<!--                                        <option>{{Role}} Admin</option>-->
+<!--&lt;!&ndash;                                        <option value="1">AB</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <option value="2">AK</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <option value="3">BE</option>&ndash;&gt;-->
+<!--                                    </select>-->
+
+                                    <div class="form-control custom-shadow custom-radius border-0 bg-white">
+                                            {{Role}} Admin
+<!--                                        <i class="form-control-icon" data-feather="search"></i>-->
+                                    </div>
+
                                 </div>
                             </a>
                         </li>
@@ -138,7 +146,7 @@
                                 <img src="{% static 'admin_page/assets/images/users/profile_pic.png' %}" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
+                                        class="text-dark">{{user}}</span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -220,7 +228,7 @@
                 <div class="row">
                     <div class="col-7 align-self-center">
 <!--                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>-->
-                        <div class="login100-form-title" >Good Morning, Jason!</div>
+                        <div class="login100-form-title" >Good Morning,  {{ user}}!</div>
 <!--                        <span class="login100-form-title">-->
 <!--						Good Morning, Jason!-->
 <!--					    </span>-->
@@ -254,63 +262,32 @@
                 <!-- *************************************************************** -->
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
-                <div class="card-group">
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                <div class="card-group row">
+                    {% for link in links %}
+                    <div class="col-sm-3 mb-3">
+                        <div class="card-body border-right"  style="background-color: white">
+                            <div class="d-flex d-lg-flex w-30 d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Finance Reports</h4>
+<!--                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>-->
+                                        {%if link.title == "Manage User Accounts" or link.title == "Assign Roles"%}
+                                                
+                                            <h4> <a href="{%url 'admin:index'%}" target="_blank" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
+                                            
+                                        {%else%}
+                                            <h4> <a href="{{link.url}}" target="_blank" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
+                                        {%endif %}
+
                                     </div>
                                 </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
+<!--                                <div class="ml-auto mt-md-3 mt-lg-0">-->
+<!--                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                             <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Accounts Payable</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                           <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Accounts Receivables</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                           <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tax</h4>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %} </div>
+<!--
                 </div>
             </div>
             <!-- ============================================================== -->
