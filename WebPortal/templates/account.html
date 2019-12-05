@@ -271,11 +271,9 @@
                                     <div class="d-inline-flex align-items-center">
 <!--                                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">{{link.title}}</h4>-->
                                         {%if link.title == "Manage User Accounts" or link.title == "Assign Roles"%}
-                                            {%if Role != "Global"%}
-                                                <h4> <a href="#" class="page-title text-truncate text-muted font-weight-medium mb-1" > <abbr title="Requires Global Admin Role">{{link.title}}</abbr></a></h4>
-                                            {%else %}
-                                                <h4> <a href="{%url 'admin:index'%}" target="_blank" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
-                                            {%endif %}
+                                                
+                                            <h4> <a href="{%url 'admin:index'%}" target="_blank" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
+                                            
                                         {%else%}
                                             <h4> <a href="{{link.url}}" target="_blank" class="page-title text-truncate text-dark font-weight-medium mb-1" > {{link.title}}</a></h4>
                                         {%endif %}
