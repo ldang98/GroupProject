@@ -1,6 +1,6 @@
 attrs==19.3.0
 coverage==4.5.4
-Django==2.2.7
+Django==2.2.13
 django-crispy-forms==1.8.0
 django-nose==1.4.6
 importlib-metadata==1.1.0
